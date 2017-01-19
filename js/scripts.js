@@ -26,7 +26,10 @@ var result = function(number) {
 $(document).ready(function() {
   $("form#converter").submit(function(event) {
     event.preventDefault();
-    var number = ($("input#firstNum").val());
+    var number = $("input#firstNum").val();
+
+    var answer = result(number);
+    $(".result").text(answer);
 
   })
 })

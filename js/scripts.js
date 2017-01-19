@@ -1,28 +1,28 @@
 //businesss
-var I = 1;
-var V = 5;
-var X = 10;
-var L = 50;
-var C = 100;
-var D = 500;
-var M = 1000;
+// var I = 1;
+// var V = 5;
+// var X = 10;
+// var L = 50;
+// var C = 100;
+// var D = 500;
+// var M = 1000;
 
-var result = function(number) {
-  var output = "";
+var result = function(number) {  // dummy number = 7;
+  var output = "";                //output = "";
   //A loop
-  if (number > 0 && number < 4) {
-    for (var i = 1; i <= number; i++){
+  if (number > 0 && number < 4) { //won't run, number is too high.
+    for (var i = 1; i <= number; i++){ //nuber = 2
       output += "I";
     }
     //B loop
-  } else if (3 < number && number < 9) {
-    if (number === 4){
+  } else if (3 < number && number < 9) { //we get in here
+    if (number === 4){ //nope
       return "IV";
-    } else if (number === 5) {
+    } else if (number === 5) { //nope
       return "V";
-    } else {
-      return "V" + result(number-5);
-    }
+    } else { // we get in here with 7
+      return "V" + result(number - 5); // "VII";
+     }
     // C loop
   } else if ( number > 8 && number < 14) {
     if (number === 9){
@@ -34,11 +34,20 @@ var result = function(number) {
     }
     // D loop
   } else if (number > 13 && number < 40) {
-      return "X" + result(number - 10);
+    return "X" + result(number - 10);
 
   // E loop
+} else if(number > 39 && number < 50) {
+    if(number === 40) {
+      return "XL";
+    }
+    return "XL" + result(number - 40);
 
-} else if (number > 50 && number < 90) {
+  // F loop
+} else if (number > 49 && number < 90) {
+  if(number === 50) {
+    return "L";
+  }
     return "L" + result(number - 50);
 
     //final loop

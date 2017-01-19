@@ -24,13 +24,24 @@ var result = function(number) {
       return "V" + result(number-5);
     }
     // C loop
-  } else if ( number > 8 && number < 11) {
+  } else if ( number > 8 && number < 14) {
     if (number === 9){
       return "IX";
-    } else {
+    } else if (number === 10){
       return "X";
+    } else {
+      return "X" + result(number-10);
     }
+    // D loop
+  } else if (number > 13 && number < 40) {
+      return "X" + result(number - 10);
 
+  // E loop
+
+} else if (number > 50 && number < 90) {
+    return "L" + result(number - 50);
+
+    //final loop
   } else {
     return "this number is not able to be converted.";
   }
@@ -39,12 +50,11 @@ var result = function(number) {
 
 
 
-
 //user logic
 $(document).ready(function() {
   $("form#converter").submit(function(event) {
     event.preventDefault();
-    var number = $("input#firstNum").val();
+    var number = parseInt($("input#firstNum").val());
 
     var answer = result(number);
     $(".result").text(answer);

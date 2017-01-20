@@ -37,24 +37,37 @@ var result = function(number) {  // dummy number = 7;
     return "X" + result(number - 10);
 
   // E loop
-} else if(number > 39 && number < 50) {
-    if(number === 40) {
-      return "XL";
+  } else if(number > 39 && number < 50) {
+      if(number === 40) {
+        return "XL";
+      }
+      return "XL" + result(number - 40);
+
+    // F loop
+  } else if (number > 49 && number < 90) {
+    if(number === 50) {
+      return "L";
     }
-    return "XL" + result(number - 40);
+      return "L" + result(number - 50);
 
-  // F loop
-} else if (number > 49 && number < 90) {
-  if(number === 50) {
-    return "L";
-  }
-    return "L" + result(number - 50);
+    // G loop
+  } else if (number > 89 && number < 100) {
+    if(number === 90) {
+         return "XC";
+       }
+         return "XC" + result(number - 90);
 
-    //final loop
+    // H loop
+  } else if (number > 99 && number < 400) {
+      if(number === 100) {
+        return "C";
+      }
+        return "C" + result(number - 100);
+      //final loop
   } else {
-    return "this number is not able to be converted.";
+      return "this number is not able to be converted.";
   }
-  return output;
+    return output;
 }
 
 
